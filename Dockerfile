@@ -19,6 +19,7 @@ RUN yay -Syu --noconfirm msi-perkeyrgb \
 	google-cloud-sdk \
 	insomnia \
 	stern-bin \
+	gitflow-avh \
 	minecraft-launcher \
 	mongodb-bin \
 	mongodb-tools-bin
