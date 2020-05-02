@@ -16,6 +16,8 @@ RUN git clone https://aur.archlinux.org/yay.git && \
 
 RUN yay -Syu --noconfirm msi-perkeyrgb \
 	brother-hll2350dw \
+	screenrotator-git \
+	google-chrome \
 	google-cloud-sdk \
 	insomnia \
 	stern-bin \
