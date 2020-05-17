@@ -1,5 +1,7 @@
 FROM archlinux AS builder
 
+RUN pacman-key --init && pacman-key --populate
+
 RUN pacman -Syu --noconfirm --needed git base-devel sudo
 
 RUN useradd builduser -m && \
@@ -24,7 +26,8 @@ RUN yay -Syu --noconfirm msi-perkeyrgb \
 	gitflow-avh \
 	minecraft-launcher \
 	mongodb-bin \
-	mongodb-tools-bin
+	mongodb-tools-bin \
+    visual-studio-code-bin
 
 RUN mkdir repo && \
 	cd repo && \
