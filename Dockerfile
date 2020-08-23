@@ -1,7 +1,5 @@
 FROM archlinux AS builder
 
-RUN pacman-key --init && pacman-key --populate
-
 RUN pacman -Syu --noconfirm --needed git base-devel sudo
 
 RUN useradd builduser -m && \
@@ -15,6 +13,8 @@ WORKDIR /home/builduser
 RUN git clone https://aur.archlinux.org/yay.git && \
 	cd yay && \
 	makepkg -si --noconfirm
+
+RUN gpg --recv-keys --keyserver keyserver.ubuntu.com 5CC908FDB71E12C2
 
 RUN yay -Syu --noconfirm msi-perkeyrgb \
 	brother-hll2350dw \
